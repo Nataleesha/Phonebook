@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { register } from "components/Redux/auth/authOperations.js";
 import { getUserName, getIsLoggedIn } from "components/Redux/selectors";
@@ -11,11 +11,6 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    alert(userName);
-    alert(loggedIn);
-  }, [userName, loggedIn]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,10 +73,6 @@ const Register = () => {
         ></input>
         <button type="submit">Sign up</button>
       </form>
-      <div>
-        <h4>User logged:</h4>
-        <p>{(userName, loggedIn)}</p>
-      </div>
     </>
   );
 };
