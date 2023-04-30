@@ -1,6 +1,6 @@
 import css from "components/Form/Form.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setFilter } from "components/Redux/filterSlice.js";
+import { setFilter } from "components/Redux/filter/filterSlice.js";
 import { getFilter } from "components/Redux/selectors.js";
 
 const Filter = () => {

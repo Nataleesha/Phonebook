@@ -1,13 +1,13 @@
 import css from "components/Form/Form.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "components/Form/Loader";
+import Loader from "components/Loader/Loader";
 import {
   getContacts,
   getIsLoading,
   getError,
   getFilter,
 } from "components/Redux/selectors";
-import { deleteContact } from "components/Redux/deleteContactOperation";
+import { deleteContact } from "components/Redux/contacts/deleteContactOperation";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 const Contacts = () => {

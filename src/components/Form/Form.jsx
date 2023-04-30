@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import css from "components/Form/Form.module.css";
 import { nanoid } from "nanoid";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchContacts } from "components/Redux/fetchContactsOperation";
+import { fetchContacts } from "components/Redux/contacts/fetchContactsOperation";
 import { getContacts } from "components/Redux/selectors";
-import { addContact } from "components/Redux/addContactOperation";
+import { addContact } from "components/Redux/contacts/addContactOperation";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 export default function Form() {
