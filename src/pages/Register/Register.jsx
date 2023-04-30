@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { register } from "components/Redux/auth/authOperations.js";
-import { getUserName, getIsLoggedIn } from "components/Redux/selectors";
+// import { getUserName, getIsLoggedIn } from "components/Redux/selectors";
 import css from "./Register.module.css";
 
 const Register = () => {
   const dispatch = useDispatch();
-  const userName = useSelector(getUserName);
-  const loggedIn = useSelector(getIsLoggedIn);
+  // const userName = useSelector(getUserName);
+  // const loggedIn = useSelector(getIsLoggedIn);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
