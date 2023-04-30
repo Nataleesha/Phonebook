@@ -10,8 +10,8 @@ import { getIsLoggedIn } from "components/Redux/selectors";
 const Navigation = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   return (
-    <>
-      <header className={css.container}>
+    <div className={css.container}>
+      <header>
         <nav className={css["nav-container"]}>
           <ul>
             <li>
@@ -29,7 +29,7 @@ const Navigation = () => {
           <Outlet />
         </Suspense>
       </main>
-    </>
+    </div>
   );
 };
 
