@@ -65,6 +65,3 @@ const Login = () => {
 };
 
 export default Login;
-
-//  pipkin123@mail.com
-//qazxswedc123

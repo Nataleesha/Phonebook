@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "components/Redux/auth/authOperations.js";
-// import { getUserName, getIsLoggedIn } from "components/Redux/selectors";
 import css from "./Register.module.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Register = () => {
   const dispatch = useDispatch();
-  // const userName = useSelector(getUserName);
-  // const loggedIn = useSelector(getIsLoggedIn);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
