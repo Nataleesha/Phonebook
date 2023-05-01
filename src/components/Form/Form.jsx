@@ -6,16 +6,18 @@ import { fetchContacts } from "components/Redux/contacts/fetchContactsOperation"
 import { getContacts } from "components/Redux/selectors";
 import { addContact } from "components/Redux/contacts/addContactOperation";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
+import { getIsLoggedIn } from "components/Redux/selectors";
 
 export default function Form() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const isLoggedIn = useSelector(getIsLoggedIn);
 
   useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+    isLoggedIn && dispatch(fetchContacts());
+  }, [dispatch, isLoggedIn]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { register } from "components/Redux/auth/authOperations.js";
 // import { getUserName, getIsLoggedIn } from "components/Redux/selectors";
 import css from "./Register.module.css";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,10 @@ const Register = () => {
   };
 
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <h1>Register</h1>
       <form onSubmit={handleSubmit} autoComplete="off" className={css.form}>
         <label htmlFor="name">Name</label>
@@ -73,7 +77,7 @@ const Register = () => {
         ></input>
         <button type="submit">Sign up</button>
       </form>
-    </>
+    </HelmetProvider>
   );
 };
 

@@ -17,9 +17,11 @@ const Navigation = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <Link to="/contacts">Contacts</Link>
-            </li>
+            {isLoggedIn && (
+              <li>
+                <Link to="/contacts">Contacts</Link>
+              </li>
+            )}
           </ul>
           {isLoggedIn ? <UserMenu /> : <AuthMenu />}
         </nav>

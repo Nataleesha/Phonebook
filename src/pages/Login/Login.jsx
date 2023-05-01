@@ -2,6 +2,7 @@ import css from "./Login.module.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logIn } from "components/Redux/auth/authOperations.js";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,10 @@ const Login = () => {
   };
 
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <h1>Login</h1>
       <form onSubmit={handleSubmit} className={css.form}>
         <label htmlFor="email">Email:</label>
@@ -56,7 +60,7 @@ const Login = () => {
         <button type="submit">Sign in</button>
       </form>
       <div></div>
-    </>
+    </HelmetProvider>
   );
 };
 
