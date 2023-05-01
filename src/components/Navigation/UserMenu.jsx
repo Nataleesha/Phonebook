@@ -1,12 +1,19 @@
-import { useSelector } from "react-redux";
-import { getUserEmail } from "components/Redux/selectors";
+import { useSelector, useDispatch } from "react-redux";
+import { getUserName } from "components/Redux/selectors";
+import { logOut } from "components/Redux/auth/authOperations";
+import avatar from "img/cat.png";
 
 const UserMenu = () => {
-  const userEmail = useSelector(getUserEmail);
+  const userName = useSelector(getUserName);
+  const dispatch = useDispatch();
+
   return (
     <div>
-      <p>{userEmail}</p>
-      <button>Logout</button>
+      <img src={avatar} alt="avatar" width="35"></img>
+      <p>
+        Welcome, <b>{userName}</b>
+      </p>
+      <button onClick={() => dispatch(logOut())}>Logout</button>
     </div>
   );
 };
