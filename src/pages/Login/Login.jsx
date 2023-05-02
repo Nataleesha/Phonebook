@@ -35,31 +35,40 @@ const Login = () => {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit} className={css.form}>
-        <label htmlFor="email">Email:</label>
-        <input
-          onChange={handleChange}
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          required
-          title="Enter your email address"
-        ></input>
-        <label htmlFor="pass">Password:</label>
-        <input
-          onChange={handleChange}
-          type="password"
-          id="pass"
-          name="password"
-          value={password}
-          required
-          title="Enter your password"
-        ></input>
-        <button type="submit">Sign in</button>
-      </form>
-      <div></div>
+      <div className={css["container-login"]}>
+        <form onSubmit={handleSubmit} className={css.form}>
+          <p className={css.title}>Login</p>
+          <label className={css.label} htmlFor="email">
+            Email:
+          </label>
+          <input
+            className={css.input}
+            onChange={handleChange}
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            required
+            title="Enter email address"
+          ></input>
+          <label className={css.label} htmlFor="pass">
+            Password:
+          </label>
+          <input
+            className={css.input}
+            onChange={handleChange}
+            type="password"
+            id="pass"
+            name="password"
+            value={password}
+            required
+            title="Enter Your Password"
+          ></input>
+          <button className={css["btn-login"]} type="submit">
+            Sign in
+          </button>
+        </form>
+      </div>
     </HelmetProvider>
   );
 };

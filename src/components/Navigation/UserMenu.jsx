@@ -1,19 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
 import { getUserName } from "components/Redux/selectors";
 import { logOut } from "components/Redux/auth/authOperations";
-import avatar from "img/cat.png";
+import css from "components/Navigation/Navigation.module.css";
 
 const UserMenu = () => {
   const userName = useSelector(getUserName);
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <img src={avatar} alt="avatar" width="35"></img>
+    <div className={css.usermenu}>
       <p>
-        Welcome, <b>{userName}</b>
+        Welcome, <span className={css.username}>{userName}</span>
       </p>
-      <button onClick={() => dispatch(logOut())}>Logout</button>
+      <button className={css["btn-logout"]} onClick={() => dispatch(logOut())}>
+        Log Out
+      </button>
     </div>
   );
 };

@@ -1,17 +1,20 @@
 import css from "components/Form/Form.module.css";
-import { Circles } from "react-loader-spinner";
+import { Oval } from "react-loader-spinner";
 
 const Loader = () => {
   return (
     <div className={css["loader-container"]}>
-      <Circles
-        height="80"
-        width="80"
-        color="#BBE38F"
-        ariaLabel="circles-loading"
+      <Oval
+        height={80}
+        width={80}
+        color="#4fa94d"
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}
+        ariaLabel="oval-loading"
+        secondaryColor="#4fa94d"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
       />
     </div>
   );

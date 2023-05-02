@@ -1,4 +1,5 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import css from "pages/Home/Home.module.css";
 
 const Home = () => {
   return (
@@ -6,8 +7,10 @@ const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <div>
-        <h1>You Online Phonebook</h1>
+      <div className={css["container-home"]}>
+        <div className={css.cover}>
+          <h1 className={css.title}>You Online Phonebook</h1>
+        </div>
       </div>
     </HelmetProvider>
   );

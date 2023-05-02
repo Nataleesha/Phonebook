@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import css from "components/Navigation/Navigation.module.css";
 
 const AuthMenu = () => {
   return (
-    <ul>
+    <ul className={css["auth-menu"]}>
       <li>
-        <Link to="/register">Register</Link>
+        <Link to="/login">Log In</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link className={css.register} to="/register">
+          Sign Up
+        </Link>
       </li>
     </ul>
   );

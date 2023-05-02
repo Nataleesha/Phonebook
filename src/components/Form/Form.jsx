@@ -54,8 +54,8 @@ export default function Form() {
   };
 
   return (
-    <>
-      <h1>Phonebook</h1>
+    <div className={css["container-contacts"]}>
+      <h2 className={css.title}>Add Contact</h2>
       <form className={css.form} onSubmit={handleState}>
         <label>
           Name
@@ -87,6 +87,6 @@ export default function Form() {
           Add contact
         </button>
       </form>
-    </>
+    </div>
   );
 }

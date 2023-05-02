@@ -11,8 +11,8 @@ const Filter = () => {
   };
 
   return (
-    <>
-      <h2>Contacts</h2>
+    <div className={css["container-filter"]}>
+      <h2 className={css.title}>Filter</h2>
       <label>
         Find contact by name
         <input
@@ -23,7 +23,7 @@ const Filter = () => {
           onChange={filterNames}
         />
       </label>
-    </>
+    </div>
   );
 };
 

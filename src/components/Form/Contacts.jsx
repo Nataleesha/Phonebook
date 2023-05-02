@@ -28,12 +28,13 @@ const Contacts = () => {
   return contacts.length === 0 && isLoading && !error ? (
     <Loader />
   ) : (
-    <>
-      <ul className={css.list}>
+    <div className={css["container-list-contacts"]}>
+      <h2 className={css.title}>Contacts</h2>
+      <ul>
         {filteredContacts.map(({ id, name, number }) => (
-          <li key={id} className={css.item}>
+          <li key={id} className={css["contact-item"]}>
             <button
-              className={css.btn}
+              className={css["contact-btn"]}
               type="button"
               onClick={() => removeContact(id, name)}
             >
@@ -45,7 +46,7 @@ const Contacts = () => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

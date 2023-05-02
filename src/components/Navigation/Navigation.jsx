@@ -13,7 +13,7 @@ const Navigation = () => {
     <div className={css.container}>
       <header>
         <nav className={css["nav-container"]}>
-          <ul>
+          <ul className={css.nav}>
             <li>
               <Link to="/">Home</Link>
             </li>

@@ -6,6 +6,38 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #2d3450;
+}
+
+.nav-container a {
+  padding: 10px 20px;
+  display: block;
+  font-weight: 500;
+  color: #2d3450;
+  border-radius: 35px;
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  margin-right: 10px;
+}
+
+.nav-container a:hover {
+  background-color: #b8556c;
+  transition: all color 0.3s ease;
+  color: #f0ecd3;
+}
+
+a.register {
+  background-color: #2d3450;
+  color: #f0ecd3;
+  margin-left: 8px;
 }
 
 .nav-list {
@@ -14,4 +46,35 @@
 
 .nav-menu {
   display: flex;
+}
+
+.auth-menu {
+  display: flex;
+}
+
+.username {
+  font-weight: 700;
+  color: #b8556c;
+}
+
+.usermenu {
+  display: flex;
+  align-items: center;
+}
+
+.btn-logout {
+  margin-left: 15px;
+  padding: 10px 20px;
+  text-align: center;
+  color: #f0ecd3;
+  background-color: #2d3450;
+  border-color: transparent;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #b8556c;
+  transition: all 0.3s ease;
+  color: #2d3450;
 }

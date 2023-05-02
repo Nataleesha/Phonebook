@@ -38,42 +38,58 @@ const Register = () => {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Register</title>
+        <title>Sign Up</title>
       </Helmet>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit} autoComplete="off" className={css.form}>
-        <label htmlFor="name">Name</label>
-        <input
-          onChange={handleChange}
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          required
-          title="Enter your username"
-        ></input>
-        <label htmlFor="email">Email</label>
-        <input
-          onChange={handleChange}
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          required
-          title="Enter your email address"
-        ></input>
-        <label htmlFor="pass">Password</label>
-        <input
-          onChange={handleChange}
-          type="password"
-          id="pass"
-          name="password"
-          value={password}
-          required
-          title="Enter your password"
-        ></input>
-        <button type="submit">Sign up</button>
-      </form>
+      <div className={css["container-login"]}>
+        <form onSubmit={handleSubmit} autoComplete="off" className={css.form}>
+          <p className={css.title}>Create Account</p>
+          <label lassName={css.label} htmlFor="name">
+            Name
+          </label>
+          <input
+            className={css.input}
+            onChange={handleChange}
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            required
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          ></input>
+          <label lassName={css.label} htmlFor="email">
+            Email
+          </label>
+          <input
+            className={css.input}
+            onChange={handleChange}
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            required
+            pattern="^.+@[^\.].*\.[a-z]{2,}$"
+            title="Enter your email address"
+          ></input>
+          <label lassName={css.label} htmlFor="pass">
+            Password
+          </label>
+          <input
+            className={css.input}
+            onChange={handleChange}
+            type="password"
+            id="pass"
+            name="password"
+            value={password}
+            required
+            pattern="^.{8,20}$"
+            title="Matches any string between 8 and 20 characters in length"
+          ></input>
+          <button className={css["btn-login"]} type="submit">
+            Sign up
+          </button>
+        </form>
+      </div>
     </HelmetProvider>
   );
 };
