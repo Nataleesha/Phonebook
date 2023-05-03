@@ -19,7 +19,7 @@ const Contacts = () => {
   const lowerCaseFilter = filter.toLowerCase();
   const removeContact = (contactId, contactName) => {
     dispatch(deleteContact(contactId));
-    Notify.success(`${contactName} was deleted from your contacts`);
+    Notify.info(`${contactName} was deleted from your contacts`);
   };
   const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(lowerCaseFilter)
