@@ -9,7 +9,9 @@ const Home = () => {
       </Helmet>
       <div className={css["container-home"]}>
         <div className={css.cover}>
-          <h1 className={css.title}>You Online Phonebook</h1>
+          <h1 className={css.title}>
+            You Own Online <span className={css.name}>Phonebook</span>
+          </h1>
         </div>
       </div>
     </HelmetProvider>

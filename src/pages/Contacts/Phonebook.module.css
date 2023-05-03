@@ -1,6 +1,6 @@
 .phonebook {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
   padding-top: 20px;
 }

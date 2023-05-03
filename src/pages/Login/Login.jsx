@@ -1,34 +1,31 @@
 import css from "./Login.module.css";
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { logIn } from "components/Redux/auth/authOperations.js";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { useFormik } from "formik";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    switch (name) {
-      case "email":
-        setEmail(value);
-        break;
-      case "password":
-        setPassword(value);
-        break;
-      default:
-        return;
-    }
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit: (values) => {
+      dispatch(logIn(values))
+        .unwrap()
+        .then((res) => {
+          console.log(res);
+        })
+        .catch(() => {
+          formik.setErrors({ error: "The email or password is incorrect." });
+        });
+    },
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(logIn({ email, password }));
-    setEmail("");
-    setPassword("");
-  };
+  const err = formik.errors.error ? css.error : "";
 
   return (
     <HelmetProvider>
@@ -36,31 +33,34 @@ const Login = () => {
         <title>Login</title>
       </Helmet>
       <div className={css["container-login"]}>
-        <form onSubmit={handleSubmit} className={css.form}>
+        <form onSubmit={formik.handleSubmit} className={css.form}>
           <p className={css.title}>Login</p>
           <label className={css.label} htmlFor="email">
             Email:
           </label>
           <input
-            className={css.input}
-            onChange={handleChange}
+            className={`${css.input} ${err}`}
+            onChange={formik.handleChange}
             type="email"
             id="email"
             name="email"
-            value={email}
+            value={formik.values.email}
             required
             title="Enter email address"
           ></input>
+          {formik.errors.error ? (
+            <div className={css["error-msg"]}>{formik.errors.error}</div>
+          ) : null}
           <label className={css.label} htmlFor="pass">
             Password:
           </label>
           <input
-            className={css.input}
-            onChange={handleChange}
+            className={`${css.input} ${err}`}
+            onChange={formik.handleChange}
             type="password"
             id="pass"
             name="password"
-            value={password}
+            value={formik.values.password}
             required
             title="Enter Your Password"
           ></input>
@@ -74,3 +74,5 @@ const Login = () => {
 };
 
 export default Login;
+
+// poqw847rh83skcm
