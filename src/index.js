@@ -6,6 +6,23 @@ import App from "./components/App";
 import { store, persistor } from "components/Redux/store.js";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+
+Notify.init({
+  position: "center-top",
+  fontSize: "16px",
+  width: "350px",
+  clickToClose: "true",
+  success: {
+    background: "#3E8659",
+  },
+  failure: {
+    background: "#A60000",
+  },
+  info: {
+    background: "#3EA1A1",
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
