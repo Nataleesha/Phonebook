@@ -35,11 +35,7 @@ const Register = () => {
         <title>Sign Up</title>
       </Helmet>
       <div className={css["container-login"]}>
-        <form
-          onSubmit={formik.handleSubmit}
-          autoComplete="off"
-          className={css.form}
-        >
+        <form onSubmit={formik.handleSubmit} className={css.form}>
           <p className={css.title}>Create Account</p>
           <label className={css.label} htmlFor="name">
             Name
