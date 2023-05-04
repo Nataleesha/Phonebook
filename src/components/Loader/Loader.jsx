@@ -1,12 +1,12 @@
-import css from "components/Form/Form.module.css";
+import css from "components/Loader/Loader.module.css";
 import { Oval } from "react-loader-spinner";
 
 const Loader = () => {
   return (
     <div className={css["container-loader"]}>
       <Oval
-        height={80}
-        width={80}
+        height={60}
+        width={60}
         color="#2d3450"
         wrapperStyle={{}}
         wrapperClass=""
